@@ -1,8 +1,13 @@
-gmapsdistance
+[![Screen Shot 2016-08-17 at 2.37.05 PM.png](https://s3.postimg.org/d8smn7gfn/Screen_Shot_2016_08_17_at_2_37_05_PM.png)](https://postimg.org/image/8mwieuuwf/) gmapsdistance
 =======
 [![Build Status](https://travis-ci.org/rodazuero/gmapsdistance.png)](https://travis-ci.org/rodazuero/gmapsdistance) 
 ![](http://cranlogs.r-pkg.org/badges/gmapsdistance?color=brightgreen)
+![](https://img.shields.io/badge/license-GPL--3-brightgreen.svg?style=flat)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/gmapsdistance)](https://cran.r-project.org/package=gmapsdistance)
+
+***Interface Between R and Google Maps***
+
+[![Screen Shot 2016-08-16 at 7.44.45 PM.png](https://s3.postimg.org/7n5ldmg2b/Screen_Shot_2016_08_16_at_7_44_45_PM.png)](https://postimg.org/image/5il8cjefj/)
 
 
 The function `gmapsdistance` uses the [Google Maps Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/intro?hl=en) to compute the distance(s) and time(s) between two points or two vectors of points. An [API key](https://developers.google.com/maps/documentation/distance-matrix/get-api-key#key) is not necessary to perform the query but the function supports its usage. If an API key is being used the Distance Matrix API should be enabled in the Google Developers Console. Google maps must be able to find both the origin and the destination in order for the function to run. If the origin or destination contains multiple words, they should be separated by a plus sign (+). The distance is returned in meters and the time in seconds. 
@@ -90,23 +95,23 @@ results
 results = gmapsdistance(origin = c("Washington+DC", "New+York+NY", "Seattle+WA", "Miami+FL"), 
                         destination = c("Los+Angeles+CA", "Austin+TX", "Chicago+IL", "Philadelphia+PA"), 
                         mode = "bicycling", 
-                        dep_date = "2017-08-16", 
+                        dep_date = "2021-08-16", 
                         dep_time = "20:40:00")
 
 results
 # $Time
 #              or Time.Los+Angeles+CA Time.Austin+TX Time.Chicago+IL Time.Philadelphia+PA
-# 1 Washington+DC              856621         535146          247765                54430
-# 2   New+York+NY              917486         596011          308630                32215
-# 3    Seattle+WA              374692         678959          674989               956702
-# 4      Miami+FL              829039         416667          452035               411283
+# 1 Washington+DC              862541         531845          246831                51758
+# 2   New+York+NY              925138         594442          309429                32191
+# 3    Seattle+WA              374533         679315          674098               953968
+# 4      Miami+FL              829317         416691          452023               408135
 # 
 # $Distance
 #              or Distance.Los+Angeles+CA Distance.Austin+TX Distance.Chicago+IL Distance.Philadelphia+PA
-# 1 Washington+DC                 4567470            2838519             1303067                   266508
-# 2   New+York+NY                 4855086            3126136             1590684                   160917
-# 3    Seattle+WA                 1982354            3562970             3588297                  5051951
-# 4      Miami+FL                 4559205            2279966             2381610                  2169382
+# 1 Washington+DC                 4634641            2819060             1302364                   254773
+# 2   New+York+NY                 4930106            3114524             1597829                   160750
+# 3    Seattle+WA                 1982132            3563481             3577499                  5038342
+# 4      Miami+FL                 4564292            2279855             2381561                  2155877
 # 
 # $Status
 #              or status.Los+Angeles+CA status.Austin+TX status.Chicago+IL status.Philadelphia+PA
@@ -168,7 +173,7 @@ This example computes the travel distance and time between two vectors of cities
 origin = c("40.431478+-80.0505401", "33.7678359+-84.4906438")
 destination = c("43.0995629+-79.0437609", "41.7096483+-86.9093986")
 
-results = gmapsdistance(origin, destination, "bicycling", shape="long")
+results = gmapsdistance(origin, destination, mode="bicycling", shape="long")
 
 results
 # $Time

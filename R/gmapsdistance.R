@@ -213,15 +213,18 @@ gmapsdistance = function(origin, destination, combinations = "all", mode, key = 
       }
       
       # Call the Google Maps Webservice and store the XML output in webpageXML
-      tc = textConnection(getURL(url))
-      webpageXML = xmlParse(readLines(tc));
-      close(tc)
+      webpageXML = xmlParse(getURL(url));
       
       # Extract the results from webpageXML
       results = xmlChildren(xmlRoot(webpageXML))
       
       # Check the status of the request and throw an error if the request was denied
       request.status = as(unlist(results$status[[1]]), "character")
+      
+      # Check for google API errors
+      if (!is.null(results$error_message)) {
+        stop(paste(c("Google API returned an error: ", xmlValue(results$error_message)), sep = ""))
+      }
       
       if (request.status == "REQUEST_DENIED") {
         set.api.key(NULL)
@@ -230,7 +233,8 @@ gmapsdistance = function(origin, destination, combinations = "all", mode, key = 
       }
       
       # Extract results from results$row
-      Status = as(xmlChildren(results$row[[1]])$status[1]$text, "character")
+      rowXML = xmlChildren(results$row[[1L]])
+      Status = as(rowXML$status[1]$text, "character")
       
       if (Status == "ZERO_RESULTS") {
         # stop(paste0("Google Maps is not able to find a route between ", data$or[i]," and ", data$de[i]))
@@ -242,14 +246,16 @@ gmapsdistance = function(origin, destination, combinations = "all", mode, key = 
         data$status[i] = "PLACE_NOT_FOUND"
       }
       
+      # Check whether the user is over their query limit
+      if (Status == "OVER_QUERY_LIMIT") {
+        stop("You have exceeded your allocation of API requests for today.")
+      }
+      
       if(data$status[i] == "OK"){
-        data$Distance[i] = as(xmlChildren(results$row[[1]])$distance[1]$value[1]$text, "numeric")
+        data$Distance[i] = as(rowXML$distance[1]$value[1]$text, "numeric")
         
-        if(is.null(key) || mode != "driving"){
-          data$Time[i] = as(xmlChildren(results$row[[1]])$duration[1]$value[1]$text, "numeric")
-        } else{
-          data$Time[i] = as(xmlChildren(results$row[[1]])$duration_in_traffic[1]$value[1]$text, "numeric")
-        }
+        dur = grep("duration", names(rowXML), value = TRUE)
+        data$Time[i] = as(rowXML[[dur]][1L]$value[1L]$text, "numeric")
       }
     }
     
