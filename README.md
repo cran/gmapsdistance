@@ -1,4 +1,4 @@
-[![Screen Shot 2016-08-17 at 2.37.05 PM.png](https://s3.postimg.org/d8smn7gfn/Screen_Shot_2016_08_17_at_2_37_05_PM.png)](https://postimg.org/image/8mwieuuwf/) gmapsdistance
+<a href="url"><img src="https://cdn1.imggmi.com/uploads/2018/7/25/5015131a519097381aab2f588fa1e369-full.png" align="left" height="48" width="48" ></a> gmapsdistance
 =======
 [![Build Status](https://travis-ci.org/rodazuero/gmapsdistance.png)](https://travis-ci.org/rodazuero/gmapsdistance) 
 ![](http://cranlogs.r-pkg.org/badges/gmapsdistance?color=brightgreen)
@@ -7,22 +7,24 @@
 
 ***Interface Between R and Google Maps***
 
-[![Screen Shot 2016-08-16 at 7.44.45 PM.png](https://s3.postimg.org/7n5ldmg2b/Screen_Shot_2016_08_16_at_7_44_45_PM.png)](https://postimg.org/image/5il8cjefj/)
+<a href="url"><img src="https://cdn1.imggmi.com/uploads/2018/7/25/b8583388006d169602e55c17e99a7868-full.png" align="left" height="500" width="875" ></a> 
+
 
 
 The function `gmapsdistance` uses the [Google Maps Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/intro?hl=en) to compute the distance(s) and time(s) between two points or two vectors of points. An [API key](https://developers.google.com/maps/documentation/distance-matrix/get-api-key#key) is not necessary to perform the query but the function supports its usage. If an API key is being used the Distance Matrix API should be enabled in the Google Developers Console. Google maps must be able to find both the origin and the destination in order for the function to run. If the origin or destination contains multiple words, they should be separated by a plus sign (+). The distance is returned in meters and the time in seconds. 
 
 Four different modes of transportation are allowed: `bicycling`, `walking`, `driving`, `transit`. 
 
+
 ## Installation
 
 ```{r}
-# CRAN install
+# CRAN install.  
 install.packages("gmapsdistance")
 
 # Github installation
 # install.packages("devtools")
-devtools::install_github("rodazuero/gmapsdistance")
+# devtools::install_github("rodazuero/gmapsdistance")
 ```
 
 
@@ -95,23 +97,23 @@ results
 results = gmapsdistance(origin = c("Washington+DC", "New+York+NY", "Seattle+WA", "Miami+FL"), 
                         destination = c("Los+Angeles+CA", "Austin+TX", "Chicago+IL", "Philadelphia+PA"), 
                         mode = "bicycling", 
-                        dep_date = "2021-08-16", 
+                        dep_date = "2022-08-16", 
                         dep_time = "20:40:00")
 
 results
 # $Time
 #              or Time.Los+Angeles+CA Time.Austin+TX Time.Chicago+IL Time.Philadelphia+PA
-# 1 Washington+DC              862541         531845          246831                51758
-# 2   New+York+NY              925138         594442          309429                32191
-# 3    Seattle+WA              374533         679315          674098               953968
-# 4      Miami+FL              829317         416691          452023               408135
+# 1 Washington+DC              856621         535146          247765                54430
+# 2   New+York+NY              917486         596011          308630                32215
+# 3    Seattle+WA              374692         678959          674989               956702
+# 4      Miami+FL              829039         416667          452035               411283
 # 
 # $Distance
 #              or Distance.Los+Angeles+CA Distance.Austin+TX Distance.Chicago+IL Distance.Philadelphia+PA
-# 1 Washington+DC                 4634641            2819060             1302364                   254773
-# 2   New+York+NY                 4930106            3114524             1597829                   160750
-# 3    Seattle+WA                 1982132            3563481             3577499                  5038342
-# 4      Miami+FL                 4564292            2279855             2381561                  2155877
+# 1 Washington+DC                 4567470            2838519             1303067                   266508
+# 2   New+York+NY                 4855086            3126136             1590684                   160917
+# 3    Seattle+WA                 1982354            3562970             3588297                  5051951
+# 4      Miami+FL                 4559205            2279966             2381610                  2169382
 # 
 # $Status
 #              or status.Los+Angeles+CA status.Austin+TX status.Chicago+IL status.Philadelphia+PA
@@ -127,7 +129,7 @@ This example computes the travel distance and time matrices between two vectors 
 origin = c("Washington+DC", "New+York+NY", "Seattle+WA", "Miami+FL")
 destination = c("Los+Angeles+CA", "Austin+TX", "Chicago+IL")
 
-results = gmapsdistance(origin, destination, "driving", shape = "long")
+results = gmapsdistance(origin, destination, mode = "driving", shape = "long")
 
 results
 # $Time
@@ -382,3 +384,46 @@ You can use a Google Maps API Key (which allows you to make a larger volume of c
 ```{r}
 #set.api.key("your-google-maps-api-key")
 ```
+
+## Usage limits
+There are a set of limits to the  number of calls that can be done. These limits are established by the [Google Maps Distance Matrix API](https://developers.google.com/maps/documentation/distance-matrix/usage-limits)
+Currently, in the free version the limits are given by:
+1. 2,500 free elements per day, calculated as the sum of client-side and server-side queries.
+2. Maximum of 25 origins or 25 destinations per request.
+3. 100 elements per request.
+4. 100 elements per second, calculated as the sum of client-side and server-side queries.
+
+
+## License
+[GNU General Public License v3.0](https://github.com/rodazuero/gmapsdistance/blob/master/LICENSE.md)
+
+[Version 3.3 available in CRAN repository](https://cran.r-project.org/package=gmapsdistance)
+
+## How to contribute
+We encourage any kind of suggestions to improve the quality of this code. You can submit pull requests indicating clearly what is the purpose of the change and why we should accept such pull request. Although not necessary, we encourage you to verify that your suggestions are in accordance with the general guidelines established in the CRAN repository by running the R CMD check command. More information about this is available in [this link.](http://r-pkgs.had.co.nz/check.html). 
+
+## Code of conduct
+Please see the file [CODE_OF_CONDUCT.md](https://github.com/rodazuero/gmapsdistance/blob/master/CODE_OF_CONDUCT.md) for the Code of Conduct for the Contributor Covenant Code of Conduct. 
+
+
+## Authors
+This code was developed originally by [Rodrigo Azuero](http://rodrigoazuero.com/) and [David Zarruk.](http://www.davidzarruk.com/).
+
+It is currently maintained by Rodrigo Azuero and Demetrio Rodriguez <demetrio.rodriguez.t@gmail.com>.
+
+[AUTHORS.md](AUTHORS.md) have a list of everyone who have contributed to gmapsdistance.
+
+## Where has gmapsdistance be used
+We like to keep track of the projects where gmapsdistance has been used. This will help us identify how to better improve the code. Let us know if you use gmapsditance! Below you will find links to some of the projects and some of the references to gmapsdistance that we have found. 
+
+1. Proximity to pediatric cardiac specialty care for adolescents with congenital heart defects. [Link to article](http://onlinelibrary.wiley.com/doi/10.1002/bdr2.1129/abstract?wol1URL=/doi/10.1002/bdr2.1129/abstract&regionCode=US-DC&identityKey=be6e5bc4-51c2-4785-aa77-110082fd5ad9). 
+
+2. Measuring Accessibility to Rail Transit Stations in Scarborough: Subway vs. LRT. [Link to article](https://www.ryerson.ca/content/dam/tedrogersschool/documents/Measuring%20accessibility%20to%20rail%20transit%20stations%20in%20Scarborough-final.pdf) 
+
+3. Social Data Science Course. University of Copenhagen. Department of Economics. [Link](https://sebastianbarfort.github.io/sds_summer/slides/gathering.pdf)
+
+4. R-bloggers. The collaborative innovation landscape in data science. [Link](https://www.r-bloggers.com/the-collaborative-innovation-landscape-in-data-science/)
+
+5. DataHubss. Google maps and R. [Link](https://www.datahubbs.com/google-maps-r/). This blog entry refers to gmapsdistance as the best package in to use Google Maps in R.  
+
+6. Exegetic - Data Science on Demand. A review of gmapsdistance. [Link](http://www.exegetic.biz/blog/2017/08/map-route-direction-asymmetry/)
