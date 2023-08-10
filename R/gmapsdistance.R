@@ -339,7 +339,14 @@ gmapsdistance = function(origin,
   if (departure == "" & dep_date == "" & dep_time == "") {
     departure_string <- ''
   } else {
-    departure_string <- paste0("&departure_time=", seconds)
+    departure_string <- paste0("&departure_time=", format(seconds, scientific = F))
+  }
+
+  # if arrival was specified
+  if (seconds_arrival == "" ) {
+    arrival_string <- ''
+  } else {
+    arrival_string <- paste0("&arrival_time=", seconds_arrival)
   }
 
   # ACTION!!! ----
@@ -351,6 +358,7 @@ gmapsdistance = function(origin,
                  mode_string,
                  "&units=metric",
                  departure_string,
+                 arrival_string,
                  traffic_model_string,
                  avoidmsg)
 
