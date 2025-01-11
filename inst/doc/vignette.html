@@ -12,7 +12,7 @@
 
 <meta name="author" content="Jindra Lacko" />
 
-<meta name="date" content="2023-08-04" />
+<meta name="date" content="2025-01-07" />
 
 <title>gmapsdistance package in use</title>
 
@@ -51,7 +51,7 @@ overflow: visible;
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -62,7 +62,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
 { counter-reset: source-line 0; }
@@ -340,7 +340,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">gmapsdistance package in use</h1>
 <h4 class="author">Jindra Lacko</h4>
-<h4 class="date">2023-08-04</h4>
+<h4 class="date">2025-01-07</h4>
 
 
 <div id="TOC">
@@ -386,10 +386,10 @@ will be made using the “driving” method, which is the default.</p>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>                        <span class="at">destination =</span> <span class="st">&quot;New York City NY&quot;</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>results</span>
 <span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="do">## $Distance</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="do">## [1] 367228</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="do">## [1] 361711</span></span>
 <span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="do">## $Time</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="do">## [1] 14226</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="do">## [1] 13910</span></span>
 <span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="do">## $Status</span></span>
 <span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="do">## [1] &quot;OK&quot;</span></span></code></pre></div>
@@ -407,7 +407,7 @@ to handle LAT-LONG coordinates.</p>
 <span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="do">## [1] 39461</span></span>
 <span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="do">## $Time</span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="do">## [1] 30005</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="do">## [1] 33271</span></span>
 <span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="do">## $Status</span></span>
 <span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="do">## [1] &quot;OK&quot;</span></span></code></pre></div>
@@ -422,21 +422,21 @@ two vectors of cities at a specific departure time</p>
 <span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>                                        <span class="st">&quot;Chicago IL&quot;</span>, <span class="st">&quot;Philadelphia PA&quot;</span>),</span>
 <span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>                        <span class="at">mode =</span> <span class="st">&quot;bicycling&quot;</span>,</span>
 <span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>                        <span class="co"># departure time as seconds from Unix Epoch (1970-01-01)</span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>                        <span class="at">departure =</span> <span class="dv">1700000000</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>                        <span class="at">departure =</span> <span class="dv">1740000000</span>)</span>
 <span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>results</span>
 <span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="do">## $Distance</span></span>
 <span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a><span class="do">##               Los Angeles CA Austin TX Chicago IL Philadelphia PA</span></span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="do">## Washington DC        4957002   3061364    1282178          243903</span></span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="do">## New York NY          5197630   3301993    1496610          161365</span></span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="do">## Seattle WA           2005074   3882730    3693196         5073667</span></span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="do">## Miami FL             4884238   2506490    2464451         2250540</span></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="do">## Washington DC        4986095   3125626    1274619          242658</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="do">## New York NY          5196724   3336255    1502416          161314</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="do">## Seattle WA           2169821   3841339    3665627         5172587</span></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="do">## Miami FL             4817978   2453963    2452591         2230557</span></span>
 <span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="do">## $Time</span></span>
 <span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="do">##               Los Angeles CA Austin TX Chicago IL Philadelphia PA</span></span>
-<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="do">## Washington DC         926961    582890     251682           48884</span></span>
-<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a><span class="do">## New York NY           973247    629175     294187           32036</span></span>
-<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="do">## Seattle WA            381741    724448     695072          968045</span></span>
-<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="do">## Miami FL              903097    460103     468328          427070</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="do">## Washington DC         923170    587645     245772           48438</span></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a><span class="do">## New York NY           965663    630138     292075           32101</span></span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="do">## Seattle WA            420165    718670     688892          978307</span></span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="do">## Miami FL              885208    448328     470617          420322</span></span>
 <span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a><span class="do">## $Status</span></span>
 <span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a><span class="do">##               Los Angeles CA Austin TX Chicago IL Philadelphia PA</span></span>
@@ -450,30 +450,29 @@ two vectors of cities at a specific departure time</p>
 <span id="cb4-32"><a href="#cb4-32" tabindex="-1"></a>                        <span class="at">destination =</span> <span class="fu">c</span>(<span class="st">&quot;Los Angeles CA&quot;</span>, <span class="st">&quot;Austin TX&quot;</span>,</span>
 <span id="cb4-33"><a href="#cb4-33" tabindex="-1"></a>                                        <span class="st">&quot;Chicago IL&quot;</span>, <span class="st">&quot;Philadelphia PA&quot;</span>),</span>
 <span id="cb4-34"><a href="#cb4-34" tabindex="-1"></a>                        <span class="at">mode =</span> <span class="st">&quot;bicycling&quot;</span>,</span>
-<span id="cb4-35"><a href="#cb4-35" tabindex="-1"></a>                        <span class="at">dep_date =</span> <span class="st">&quot;2023-11-14&quot;</span>,</span>
-<span id="cb4-36"><a href="#cb4-36" tabindex="-1"></a>                        <span class="at">dep_time =</span> <span class="st">&quot;23:13:20&quot;</span>)</span>
-<span id="cb4-37"><a href="#cb4-37" tabindex="-1"></a></span>
-<span id="cb4-38"><a href="#cb4-38" tabindex="-1"></a>results</span>
-<span id="cb4-39"><a href="#cb4-39" tabindex="-1"></a><span class="do">## $Distance</span></span>
-<span id="cb4-40"><a href="#cb4-40" tabindex="-1"></a><span class="do">##               Los Angeles CA Austin TX Chicago IL Philadelphia PA</span></span>
-<span id="cb4-41"><a href="#cb4-41" tabindex="-1"></a><span class="do">## Washington DC        4957002   3061364    1282178          243903</span></span>
-<span id="cb4-42"><a href="#cb4-42" tabindex="-1"></a><span class="do">## New York NY          5197630   3301993    1496610          161365</span></span>
-<span id="cb4-43"><a href="#cb4-43" tabindex="-1"></a><span class="do">## Seattle WA           2005074   3882730    3693196         5073667</span></span>
-<span id="cb4-44"><a href="#cb4-44" tabindex="-1"></a><span class="do">## Miami FL             4884238   2506490    2464451         2250540</span></span>
-<span id="cb4-45"><a href="#cb4-45" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb4-46"><a href="#cb4-46" tabindex="-1"></a><span class="do">## $Time</span></span>
-<span id="cb4-47"><a href="#cb4-47" tabindex="-1"></a><span class="do">##               Los Angeles CA Austin TX Chicago IL Philadelphia PA</span></span>
-<span id="cb4-48"><a href="#cb4-48" tabindex="-1"></a><span class="do">## Washington DC         926961    582890     251682           48884</span></span>
-<span id="cb4-49"><a href="#cb4-49" tabindex="-1"></a><span class="do">## New York NY           973247    629175     294187           32036</span></span>
-<span id="cb4-50"><a href="#cb4-50" tabindex="-1"></a><span class="do">## Seattle WA            381741    724448     695072          968045</span></span>
-<span id="cb4-51"><a href="#cb4-51" tabindex="-1"></a><span class="do">## Miami FL              903097    460103     468328          427070</span></span>
-<span id="cb4-52"><a href="#cb4-52" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb4-53"><a href="#cb4-53" tabindex="-1"></a><span class="do">## $Status</span></span>
-<span id="cb4-54"><a href="#cb4-54" tabindex="-1"></a><span class="do">##               Los Angeles CA Austin TX Chicago IL Philadelphia PA</span></span>
-<span id="cb4-55"><a href="#cb4-55" tabindex="-1"></a><span class="do">## Washington DC &quot;OK&quot;           &quot;OK&quot;      &quot;OK&quot;       &quot;OK&quot;           </span></span>
-<span id="cb4-56"><a href="#cb4-56" tabindex="-1"></a><span class="do">## New York NY   &quot;OK&quot;           &quot;OK&quot;      &quot;OK&quot;       &quot;OK&quot;           </span></span>
-<span id="cb4-57"><a href="#cb4-57" tabindex="-1"></a><span class="do">## Seattle WA    &quot;OK&quot;           &quot;OK&quot;      &quot;OK&quot;       &quot;OK&quot;           </span></span>
-<span id="cb4-58"><a href="#cb4-58" tabindex="-1"></a><span class="do">## Miami FL      &quot;OK&quot;           &quot;OK&quot;      &quot;OK&quot;       &quot;OK&quot;</span></span></code></pre></div>
+<span id="cb4-35"><a href="#cb4-35" tabindex="-1"></a>                        <span class="at">dep_date =</span> <span class="st">&quot;2025-02-19&quot;</span>,</span>
+<span id="cb4-36"><a href="#cb4-36" tabindex="-1"></a>                        <span class="at">dep_time =</span> <span class="st">&quot;22:20:00&quot;</span>)</span>
+<span id="cb4-37"><a href="#cb4-37" tabindex="-1"></a>results</span>
+<span id="cb4-38"><a href="#cb4-38" tabindex="-1"></a><span class="do">## $Distance</span></span>
+<span id="cb4-39"><a href="#cb4-39" tabindex="-1"></a><span class="do">##               Los Angeles CA Austin TX Chicago IL Philadelphia PA</span></span>
+<span id="cb4-40"><a href="#cb4-40" tabindex="-1"></a><span class="do">## Washington DC        4986095   3125626    1274619          242658</span></span>
+<span id="cb4-41"><a href="#cb4-41" tabindex="-1"></a><span class="do">## New York NY          5196724   3336255    1502416          161314</span></span>
+<span id="cb4-42"><a href="#cb4-42" tabindex="-1"></a><span class="do">## Seattle WA           2169821   3841339    3665627         5172587</span></span>
+<span id="cb4-43"><a href="#cb4-43" tabindex="-1"></a><span class="do">## Miami FL             4817978   2453963    2452591         2230557</span></span>
+<span id="cb4-44"><a href="#cb4-44" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb4-45"><a href="#cb4-45" tabindex="-1"></a><span class="do">## $Time</span></span>
+<span id="cb4-46"><a href="#cb4-46" tabindex="-1"></a><span class="do">##               Los Angeles CA Austin TX Chicago IL Philadelphia PA</span></span>
+<span id="cb4-47"><a href="#cb4-47" tabindex="-1"></a><span class="do">## Washington DC         923170    587645     245772           48438</span></span>
+<span id="cb4-48"><a href="#cb4-48" tabindex="-1"></a><span class="do">## New York NY           965663    630138     292075           32101</span></span>
+<span id="cb4-49"><a href="#cb4-49" tabindex="-1"></a><span class="do">## Seattle WA            420165    718670     688892          978307</span></span>
+<span id="cb4-50"><a href="#cb4-50" tabindex="-1"></a><span class="do">## Miami FL              885208    448328     470617          420322</span></span>
+<span id="cb4-51"><a href="#cb4-51" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb4-52"><a href="#cb4-52" tabindex="-1"></a><span class="do">## $Status</span></span>
+<span id="cb4-53"><a href="#cb4-53" tabindex="-1"></a><span class="do">##               Los Angeles CA Austin TX Chicago IL Philadelphia PA</span></span>
+<span id="cb4-54"><a href="#cb4-54" tabindex="-1"></a><span class="do">## Washington DC &quot;OK&quot;           &quot;OK&quot;      &quot;OK&quot;       &quot;OK&quot;           </span></span>
+<span id="cb4-55"><a href="#cb4-55" tabindex="-1"></a><span class="do">## New York NY   &quot;OK&quot;           &quot;OK&quot;      &quot;OK&quot;       &quot;OK&quot;           </span></span>
+<span id="cb4-56"><a href="#cb4-56" tabindex="-1"></a><span class="do">## Seattle WA    &quot;OK&quot;           &quot;OK&quot;      &quot;OK&quot;       &quot;OK&quot;           </span></span>
+<span id="cb4-57"><a href="#cb4-57" tabindex="-1"></a><span class="do">## Miami FL      &quot;OK&quot;           &quot;OK&quot;      &quot;OK&quot;       &quot;OK&quot;</span></span></code></pre></div>
 </div>
 <div id="long-format-of-distance-matrix" class="section level2">
 <h2>Long format of distance matrix</h2>
@@ -490,33 +489,33 @@ two vectors of cities and return the results in long format</p>
 <span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>results</span>
 <span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a><span class="do">## $Distance</span></span>
 <span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="do">##               or             de Distance</span></span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="do">## 1  Washington DC Los Angeles CA  4295163</span></span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="do">## 2    New York NY Los Angeles CA  4488402</span></span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="do">## 3     Seattle WA Los Angeles CA  1829326</span></span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="do">## 4       Miami FL Los Angeles CA  4401120</span></span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="do">## 5  Washington DC      Austin TX  2451233</span></span>
-<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="do">## 6    New York NY      Austin TX  2804800</span></span>
-<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="do">## 7     Seattle WA      Austin TX  3409450</span></span>
-<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a><span class="do">## 8       Miami FL      Austin TX  2171268</span></span>
-<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="do">## 9  Washington DC     Chicago IL  1120330</span></span>
-<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a><span class="do">## 10   New York NY     Chicago IL  1271030</span></span>
-<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a><span class="do">## 11    Seattle WA     Chicago IL  3329491</span></span>
-<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a><span class="do">## 12      Miami FL     Chicago IL  2222034</span></span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="do">## 1  Washington DC Los Angeles CA  4294717</span></span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="do">## 2    New York NY Los Angeles CA  4488645</span></span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a><span class="do">## 3     Seattle WA Los Angeles CA  1826153</span></span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a><span class="do">## 4       Miami FL Los Angeles CA  4402933</span></span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a><span class="do">## 5  Washington DC      Austin TX  2452059</span></span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a><span class="do">## 6    New York NY      Austin TX  2805907</span></span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="do">## 7     Seattle WA      Austin TX  3408299</span></span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a><span class="do">## 8       Miami FL      Austin TX  2175955</span></span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a><span class="do">## 9  Washington DC     Chicago IL  1120430</span></span>
+<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a><span class="do">## 10   New York NY     Chicago IL  1271087</span></span>
+<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a><span class="do">## 11    Seattle WA     Chicago IL  3321787</span></span>
+<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a><span class="do">## 12      Miami FL     Chicago IL  2221683</span></span>
 <span id="cb5-24"><a href="#cb5-24" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a><span class="do">## $Time</span></span>
 <span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a><span class="do">##               or             de   Time</span></span>
-<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a><span class="do">## 1  Washington DC Los Angeles CA 139080</span></span>
-<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a><span class="do">## 2    New York NY Los Angeles CA 146528</span></span>
-<span id="cb5-29"><a href="#cb5-29" tabindex="-1"></a><span class="do">## 3     Seattle WA Los Angeles CA  62510</span></span>
-<span id="cb5-30"><a href="#cb5-30" tabindex="-1"></a><span class="do">## 4       Miami FL Los Angeles CA 140812</span></span>
-<span id="cb5-31"><a href="#cb5-31" tabindex="-1"></a><span class="do">## 5  Washington DC      Austin TX  80342</span></span>
-<span id="cb5-32"><a href="#cb5-32" tabindex="-1"></a><span class="do">## 6    New York NY      Austin TX  92688</span></span>
-<span id="cb5-33"><a href="#cb5-33" tabindex="-1"></a><span class="do">## 7     Seattle WA      Austin TX 116746</span></span>
-<span id="cb5-34"><a href="#cb5-34" tabindex="-1"></a><span class="do">## 8       Miami FL      Austin TX  69791</span></span>
-<span id="cb5-35"><a href="#cb5-35" tabindex="-1"></a><span class="do">## 9  Washington DC     Chicago IL  39529</span></span>
-<span id="cb5-36"><a href="#cb5-36" tabindex="-1"></a><span class="do">## 10   New York NY     Chicago IL  43252</span></span>
-<span id="cb5-37"><a href="#cb5-37" tabindex="-1"></a><span class="do">## 11    Seattle WA     Chicago IL 107630</span></span>
-<span id="cb5-38"><a href="#cb5-38" tabindex="-1"></a><span class="do">## 12      Miami FL     Chicago IL  72296</span></span>
+<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a><span class="do">## 1  Washington DC Los Angeles CA 139041</span></span>
+<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a><span class="do">## 2    New York NY Los Angeles CA 146264</span></span>
+<span id="cb5-29"><a href="#cb5-29" tabindex="-1"></a><span class="do">## 3     Seattle WA Los Angeles CA  62401</span></span>
+<span id="cb5-30"><a href="#cb5-30" tabindex="-1"></a><span class="do">## 4       Miami FL Los Angeles CA 141098</span></span>
+<span id="cb5-31"><a href="#cb5-31" tabindex="-1"></a><span class="do">## 5  Washington DC      Austin TX  80311</span></span>
+<span id="cb5-32"><a href="#cb5-32" tabindex="-1"></a><span class="do">## 6    New York NY      Austin TX  92613</span></span>
+<span id="cb5-33"><a href="#cb5-33" tabindex="-1"></a><span class="do">## 7     Seattle WA      Austin TX 117319</span></span>
+<span id="cb5-34"><a href="#cb5-34" tabindex="-1"></a><span class="do">## 8       Miami FL      Austin TX  70238</span></span>
+<span id="cb5-35"><a href="#cb5-35" tabindex="-1"></a><span class="do">## 9  Washington DC     Chicago IL  38406</span></span>
+<span id="cb5-36"><a href="#cb5-36" tabindex="-1"></a><span class="do">## 10   New York NY     Chicago IL  43228</span></span>
+<span id="cb5-37"><a href="#cb5-37" tabindex="-1"></a><span class="do">## 11    Seattle WA     Chicago IL 107017</span></span>
+<span id="cb5-38"><a href="#cb5-38" tabindex="-1"></a><span class="do">## 12      Miami FL     Chicago IL  72163</span></span>
 <span id="cb5-39"><a href="#cb5-39" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb5-40"><a href="#cb5-40" tabindex="-1"></a><span class="do">## $Status</span></span>
 <span id="cb5-41"><a href="#cb5-41" tabindex="-1"></a><span class="do">##               or             de status</span></span>
@@ -548,17 +547,17 @@ vectors of cities defined as LAT-LONG coordinates.</p>
 <span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>results</span>
 <span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a><span class="do">## $Distance</span></span>
 <span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="do">##                       or                     de Distance</span></span>
-<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="do">## 1  40.431478 -80.0505401 43.0995629 -79.0437609   406350</span></span>
-<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="do">## 2 33.7678359 -84.4906438 43.0995629 -79.0437609  1616369</span></span>
-<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="do">## 3  40.431478 -80.0505401 41.7096483 -86.9093986   715128</span></span>
-<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a><span class="do">## 4 33.7678359 -84.4906438 41.7096483 -86.9093986  1178992</span></span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="do">## 1  40.431478 -80.0505401 43.0995629 -79.0437609   413791</span></span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="do">## 2 33.7678359 -84.4906438 43.0995629 -79.0437609  1623357</span></span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="do">## 3  40.431478 -80.0505401 41.7096483 -86.9093986   728701</span></span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a><span class="do">## 4 33.7678359 -84.4906438 41.7096483 -86.9093986  1181441</span></span>
 <span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a><span class="do">## $Time</span></span>
 <span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a><span class="do">##                       or                     de   Time</span></span>
-<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a><span class="do">## 1  40.431478 -80.0505401 43.0995629 -79.0437609  83792</span></span>
-<span id="cb6-20"><a href="#cb6-20" tabindex="-1"></a><span class="do">## 2 33.7678359 -84.4906438 43.0995629 -79.0437609 322432</span></span>
-<span id="cb6-21"><a href="#cb6-21" tabindex="-1"></a><span class="do">## 3  40.431478 -80.0505401 41.7096483 -86.9093986 136114</span></span>
-<span id="cb6-22"><a href="#cb6-22" tabindex="-1"></a><span class="do">## 4 33.7678359 -84.4906438 41.7096483 -86.9093986 235381</span></span>
+<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a><span class="do">## 1  40.431478 -80.0505401 43.0995629 -79.0437609  83934</span></span>
+<span id="cb6-20"><a href="#cb6-20" tabindex="-1"></a><span class="do">## 2 33.7678359 -84.4906438 43.0995629 -79.0437609 318376</span></span>
+<span id="cb6-21"><a href="#cb6-21" tabindex="-1"></a><span class="do">## 3  40.431478 -80.0505401 41.7096483 -86.9093986 137489</span></span>
+<span id="cb6-22"><a href="#cb6-22" tabindex="-1"></a><span class="do">## 4 33.7678359 -84.4906438 41.7096483 -86.9093986 233074</span></span>
 <span id="cb6-23"><a href="#cb6-23" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb6-24"><a href="#cb6-24" tabindex="-1"></a><span class="do">## $Status</span></span>
 <span id="cb6-25"><a href="#cb6-25" tabindex="-1"></a><span class="do">##                       or                     de status</span></span>
@@ -583,17 +582,17 @@ vectors of cities using the ‘combinations’ option.</p>
 <span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a>results</span>
 <span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a><span class="do">## $Distance</span></span>
 <span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a><span class="do">##              or              de Distance</span></span>
-<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="do">## 1 Washington DC  Los Angeles CA  4957002</span></span>
-<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="do">## 2   New York NY       Austin TX  3301993</span></span>
-<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a><span class="do">## 3    Seattle WA      Chicago IL  3693196</span></span>
-<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a><span class="do">## 4      Miami FL Philadelphia PA  2250540</span></span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a><span class="do">## 1 Washington DC  Los Angeles CA  4986095</span></span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a><span class="do">## 2   New York NY       Austin TX  3336255</span></span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a><span class="do">## 3    Seattle WA      Chicago IL  3665627</span></span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a><span class="do">## 4      Miami FL Philadelphia PA  2230557</span></span>
 <span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a><span class="do">## $Time</span></span>
 <span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a><span class="do">##              or              de   Time</span></span>
-<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a><span class="do">## 1 Washington DC  Los Angeles CA 926961</span></span>
-<span id="cb7-21"><a href="#cb7-21" tabindex="-1"></a><span class="do">## 2   New York NY       Austin TX 629175</span></span>
-<span id="cb7-22"><a href="#cb7-22" tabindex="-1"></a><span class="do">## 3    Seattle WA      Chicago IL 695072</span></span>
-<span id="cb7-23"><a href="#cb7-23" tabindex="-1"></a><span class="do">## 4      Miami FL Philadelphia PA 427070</span></span>
+<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a><span class="do">## 1 Washington DC  Los Angeles CA 923170</span></span>
+<span id="cb7-21"><a href="#cb7-21" tabindex="-1"></a><span class="do">## 2   New York NY       Austin TX 630138</span></span>
+<span id="cb7-22"><a href="#cb7-22" tabindex="-1"></a><span class="do">## 3    Seattle WA      Chicago IL 688892</span></span>
+<span id="cb7-23"><a href="#cb7-23" tabindex="-1"></a><span class="do">## 4      Miami FL Philadelphia PA 420322</span></span>
 <span id="cb7-24"><a href="#cb7-24" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb7-25"><a href="#cb7-25" tabindex="-1"></a><span class="do">## $Status</span></span>
 <span id="cb7-26"><a href="#cb7-26" tabindex="-1"></a><span class="do">##              or              de status</span></span>
@@ -611,17 +610,17 @@ vectors of cities using the ‘combinations’ option.</p>
 <span id="cb7-38"><a href="#cb7-38" tabindex="-1"></a>results</span>
 <span id="cb7-39"><a href="#cb7-39" tabindex="-1"></a><span class="do">## $Distance</span></span>
 <span id="cb7-40"><a href="#cb7-40" tabindex="-1"></a><span class="do">##               Los Angeles CA Austin TX Chicago IL Philadelphia PA</span></span>
-<span id="cb7-41"><a href="#cb7-41" tabindex="-1"></a><span class="do">## Washington DC        4957002   3061364    1282178          243903</span></span>
-<span id="cb7-42"><a href="#cb7-42" tabindex="-1"></a><span class="do">## New York NY          5197630   3301993    1496610          161365</span></span>
-<span id="cb7-43"><a href="#cb7-43" tabindex="-1"></a><span class="do">## Seattle WA           2005074   3882730    3693196         5073667</span></span>
-<span id="cb7-44"><a href="#cb7-44" tabindex="-1"></a><span class="do">## Miami FL             4884238   2506490    2464451         2250540</span></span>
+<span id="cb7-41"><a href="#cb7-41" tabindex="-1"></a><span class="do">## Washington DC        4986095   3125626    1274619          242658</span></span>
+<span id="cb7-42"><a href="#cb7-42" tabindex="-1"></a><span class="do">## New York NY          5196724   3336255    1502416          161314</span></span>
+<span id="cb7-43"><a href="#cb7-43" tabindex="-1"></a><span class="do">## Seattle WA           2169821   3841339    3665627         5172587</span></span>
+<span id="cb7-44"><a href="#cb7-44" tabindex="-1"></a><span class="do">## Miami FL             4817978   2453963    2452591         2230557</span></span>
 <span id="cb7-45"><a href="#cb7-45" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb7-46"><a href="#cb7-46" tabindex="-1"></a><span class="do">## $Time</span></span>
 <span id="cb7-47"><a href="#cb7-47" tabindex="-1"></a><span class="do">##               Los Angeles CA Austin TX Chicago IL Philadelphia PA</span></span>
-<span id="cb7-48"><a href="#cb7-48" tabindex="-1"></a><span class="do">## Washington DC         926961    582890     251682           48884</span></span>
-<span id="cb7-49"><a href="#cb7-49" tabindex="-1"></a><span class="do">## New York NY           973247    629175     294187           32036</span></span>
-<span id="cb7-50"><a href="#cb7-50" tabindex="-1"></a><span class="do">## Seattle WA            381741    724448     695072          968045</span></span>
-<span id="cb7-51"><a href="#cb7-51" tabindex="-1"></a><span class="do">## Miami FL              903097    460103     468328          427070</span></span>
+<span id="cb7-48"><a href="#cb7-48" tabindex="-1"></a><span class="do">## Washington DC         923170    587645     245772           48438</span></span>
+<span id="cb7-49"><a href="#cb7-49" tabindex="-1"></a><span class="do">## New York NY           965663    630138     292075           32101</span></span>
+<span id="cb7-50"><a href="#cb7-50" tabindex="-1"></a><span class="do">## Seattle WA            420165    718670     688892          978307</span></span>
+<span id="cb7-51"><a href="#cb7-51" tabindex="-1"></a><span class="do">## Miami FL              885208    448328     470617          420322</span></span>
 <span id="cb7-52"><a href="#cb7-52" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb7-53"><a href="#cb7-53" tabindex="-1"></a><span class="do">## $Status</span></span>
 <span id="cb7-54"><a href="#cb7-54" tabindex="-1"></a><span class="do">##               Los Angeles CA Austin TX Chicago IL Philadelphia PA</span></span>
@@ -638,41 +637,41 @@ vectors of cities using the ‘combinations’ option.</p>
 <span id="cb7-65"><a href="#cb7-65" tabindex="-1"></a>results</span>
 <span id="cb7-66"><a href="#cb7-66" tabindex="-1"></a><span class="do">## $Distance</span></span>
 <span id="cb7-67"><a href="#cb7-67" tabindex="-1"></a><span class="do">##               or              de Distance</span></span>
-<span id="cb7-68"><a href="#cb7-68" tabindex="-1"></a><span class="do">## 1  Washington DC  Los Angeles CA  4957002</span></span>
-<span id="cb7-69"><a href="#cb7-69" tabindex="-1"></a><span class="do">## 2    New York NY  Los Angeles CA  5197630</span></span>
-<span id="cb7-70"><a href="#cb7-70" tabindex="-1"></a><span class="do">## 3     Seattle WA  Los Angeles CA  2005074</span></span>
-<span id="cb7-71"><a href="#cb7-71" tabindex="-1"></a><span class="do">## 4       Miami FL  Los Angeles CA  4884238</span></span>
-<span id="cb7-72"><a href="#cb7-72" tabindex="-1"></a><span class="do">## 5  Washington DC       Austin TX  3061364</span></span>
-<span id="cb7-73"><a href="#cb7-73" tabindex="-1"></a><span class="do">## 6    New York NY       Austin TX  3301993</span></span>
-<span id="cb7-74"><a href="#cb7-74" tabindex="-1"></a><span class="do">## 7     Seattle WA       Austin TX  3882730</span></span>
-<span id="cb7-75"><a href="#cb7-75" tabindex="-1"></a><span class="do">## 8       Miami FL       Austin TX  2506490</span></span>
-<span id="cb7-76"><a href="#cb7-76" tabindex="-1"></a><span class="do">## 9  Washington DC      Chicago IL  1282178</span></span>
-<span id="cb7-77"><a href="#cb7-77" tabindex="-1"></a><span class="do">## 10   New York NY      Chicago IL  1496610</span></span>
-<span id="cb7-78"><a href="#cb7-78" tabindex="-1"></a><span class="do">## 11    Seattle WA      Chicago IL  3693196</span></span>
-<span id="cb7-79"><a href="#cb7-79" tabindex="-1"></a><span class="do">## 12      Miami FL      Chicago IL  2464451</span></span>
-<span id="cb7-80"><a href="#cb7-80" tabindex="-1"></a><span class="do">## 13 Washington DC Philadelphia PA   243903</span></span>
-<span id="cb7-81"><a href="#cb7-81" tabindex="-1"></a><span class="do">## 14   New York NY Philadelphia PA   161365</span></span>
-<span id="cb7-82"><a href="#cb7-82" tabindex="-1"></a><span class="do">## 15    Seattle WA Philadelphia PA  5073667</span></span>
-<span id="cb7-83"><a href="#cb7-83" tabindex="-1"></a><span class="do">## 16      Miami FL Philadelphia PA  2250540</span></span>
+<span id="cb7-68"><a href="#cb7-68" tabindex="-1"></a><span class="do">## 1  Washington DC  Los Angeles CA  4986095</span></span>
+<span id="cb7-69"><a href="#cb7-69" tabindex="-1"></a><span class="do">## 2    New York NY  Los Angeles CA  5196724</span></span>
+<span id="cb7-70"><a href="#cb7-70" tabindex="-1"></a><span class="do">## 3     Seattle WA  Los Angeles CA  2169821</span></span>
+<span id="cb7-71"><a href="#cb7-71" tabindex="-1"></a><span class="do">## 4       Miami FL  Los Angeles CA  4817978</span></span>
+<span id="cb7-72"><a href="#cb7-72" tabindex="-1"></a><span class="do">## 5  Washington DC       Austin TX  3125626</span></span>
+<span id="cb7-73"><a href="#cb7-73" tabindex="-1"></a><span class="do">## 6    New York NY       Austin TX  3336255</span></span>
+<span id="cb7-74"><a href="#cb7-74" tabindex="-1"></a><span class="do">## 7     Seattle WA       Austin TX  3841339</span></span>
+<span id="cb7-75"><a href="#cb7-75" tabindex="-1"></a><span class="do">## 8       Miami FL       Austin TX  2453963</span></span>
+<span id="cb7-76"><a href="#cb7-76" tabindex="-1"></a><span class="do">## 9  Washington DC      Chicago IL  1274619</span></span>
+<span id="cb7-77"><a href="#cb7-77" tabindex="-1"></a><span class="do">## 10   New York NY      Chicago IL  1502416</span></span>
+<span id="cb7-78"><a href="#cb7-78" tabindex="-1"></a><span class="do">## 11    Seattle WA      Chicago IL  3665627</span></span>
+<span id="cb7-79"><a href="#cb7-79" tabindex="-1"></a><span class="do">## 12      Miami FL      Chicago IL  2452591</span></span>
+<span id="cb7-80"><a href="#cb7-80" tabindex="-1"></a><span class="do">## 13 Washington DC Philadelphia PA   242658</span></span>
+<span id="cb7-81"><a href="#cb7-81" tabindex="-1"></a><span class="do">## 14   New York NY Philadelphia PA   161314</span></span>
+<span id="cb7-82"><a href="#cb7-82" tabindex="-1"></a><span class="do">## 15    Seattle WA Philadelphia PA  5172587</span></span>
+<span id="cb7-83"><a href="#cb7-83" tabindex="-1"></a><span class="do">## 16      Miami FL Philadelphia PA  2230557</span></span>
 <span id="cb7-84"><a href="#cb7-84" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb7-85"><a href="#cb7-85" tabindex="-1"></a><span class="do">## $Time</span></span>
 <span id="cb7-86"><a href="#cb7-86" tabindex="-1"></a><span class="do">##               or              de   Time</span></span>
-<span id="cb7-87"><a href="#cb7-87" tabindex="-1"></a><span class="do">## 1  Washington DC  Los Angeles CA 926961</span></span>
-<span id="cb7-88"><a href="#cb7-88" tabindex="-1"></a><span class="do">## 2    New York NY  Los Angeles CA 973247</span></span>
-<span id="cb7-89"><a href="#cb7-89" tabindex="-1"></a><span class="do">## 3     Seattle WA  Los Angeles CA 381741</span></span>
-<span id="cb7-90"><a href="#cb7-90" tabindex="-1"></a><span class="do">## 4       Miami FL  Los Angeles CA 903097</span></span>
-<span id="cb7-91"><a href="#cb7-91" tabindex="-1"></a><span class="do">## 5  Washington DC       Austin TX 582890</span></span>
-<span id="cb7-92"><a href="#cb7-92" tabindex="-1"></a><span class="do">## 6    New York NY       Austin TX 629175</span></span>
-<span id="cb7-93"><a href="#cb7-93" tabindex="-1"></a><span class="do">## 7     Seattle WA       Austin TX 724448</span></span>
-<span id="cb7-94"><a href="#cb7-94" tabindex="-1"></a><span class="do">## 8       Miami FL       Austin TX 460103</span></span>
-<span id="cb7-95"><a href="#cb7-95" tabindex="-1"></a><span class="do">## 9  Washington DC      Chicago IL 251682</span></span>
-<span id="cb7-96"><a href="#cb7-96" tabindex="-1"></a><span class="do">## 10   New York NY      Chicago IL 294187</span></span>
-<span id="cb7-97"><a href="#cb7-97" tabindex="-1"></a><span class="do">## 11    Seattle WA      Chicago IL 695072</span></span>
-<span id="cb7-98"><a href="#cb7-98" tabindex="-1"></a><span class="do">## 12      Miami FL      Chicago IL 468328</span></span>
-<span id="cb7-99"><a href="#cb7-99" tabindex="-1"></a><span class="do">## 13 Washington DC Philadelphia PA  48884</span></span>
-<span id="cb7-100"><a href="#cb7-100" tabindex="-1"></a><span class="do">## 14   New York NY Philadelphia PA  32036</span></span>
-<span id="cb7-101"><a href="#cb7-101" tabindex="-1"></a><span class="do">## 15    Seattle WA Philadelphia PA 968045</span></span>
-<span id="cb7-102"><a href="#cb7-102" tabindex="-1"></a><span class="do">## 16      Miami FL Philadelphia PA 427070</span></span>
+<span id="cb7-87"><a href="#cb7-87" tabindex="-1"></a><span class="do">## 1  Washington DC  Los Angeles CA 923170</span></span>
+<span id="cb7-88"><a href="#cb7-88" tabindex="-1"></a><span class="do">## 2    New York NY  Los Angeles CA 965663</span></span>
+<span id="cb7-89"><a href="#cb7-89" tabindex="-1"></a><span class="do">## 3     Seattle WA  Los Angeles CA 420165</span></span>
+<span id="cb7-90"><a href="#cb7-90" tabindex="-1"></a><span class="do">## 4       Miami FL  Los Angeles CA 885208</span></span>
+<span id="cb7-91"><a href="#cb7-91" tabindex="-1"></a><span class="do">## 5  Washington DC       Austin TX 587645</span></span>
+<span id="cb7-92"><a href="#cb7-92" tabindex="-1"></a><span class="do">## 6    New York NY       Austin TX 630138</span></span>
+<span id="cb7-93"><a href="#cb7-93" tabindex="-1"></a><span class="do">## 7     Seattle WA       Austin TX 718670</span></span>
+<span id="cb7-94"><a href="#cb7-94" tabindex="-1"></a><span class="do">## 8       Miami FL       Austin TX 448328</span></span>
+<span id="cb7-95"><a href="#cb7-95" tabindex="-1"></a><span class="do">## 9  Washington DC      Chicago IL 245772</span></span>
+<span id="cb7-96"><a href="#cb7-96" tabindex="-1"></a><span class="do">## 10   New York NY      Chicago IL 292075</span></span>
+<span id="cb7-97"><a href="#cb7-97" tabindex="-1"></a><span class="do">## 11    Seattle WA      Chicago IL 688892</span></span>
+<span id="cb7-98"><a href="#cb7-98" tabindex="-1"></a><span class="do">## 12      Miami FL      Chicago IL 470617</span></span>
+<span id="cb7-99"><a href="#cb7-99" tabindex="-1"></a><span class="do">## 13 Washington DC Philadelphia PA  48438</span></span>
+<span id="cb7-100"><a href="#cb7-100" tabindex="-1"></a><span class="do">## 14   New York NY Philadelphia PA  32101</span></span>
+<span id="cb7-101"><a href="#cb7-101" tabindex="-1"></a><span class="do">## 15    Seattle WA Philadelphia PA 978307</span></span>
+<span id="cb7-102"><a href="#cb7-102" tabindex="-1"></a><span class="do">## 16      Miami FL Philadelphia PA 420322</span></span>
 <span id="cb7-103"><a href="#cb7-103" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb7-104"><a href="#cb7-104" tabindex="-1"></a><span class="do">## $Status</span></span>
 <span id="cb7-105"><a href="#cb7-105" tabindex="-1"></a><span class="do">##               or              de status</span></span>
@@ -711,50 +710,87 @@ plain text.</p>
 <span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a>                        <span class="at">traffic_model =</span> <span class="st">&quot;pessimistic&quot;</span>,</span>
 <span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a>                        <span class="at">shape =</span> <span class="st">&quot;long&quot;</span>,</span>
 <span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a>                        <span class="at">key=</span>APIkey)</span>
-<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a>results</span>
-<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a><span class="do">## $Distance</span></span>
-<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="do">##              or             de Distance</span></span>
-<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a><span class="do">## 1 Washington DC Los Angeles CA  4295037</span></span>
-<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="do">## 2   New York NY Los Angeles CA  4488684</span></span>
-<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="do">## 3 Washington DC      Austin TX  2450825</span></span>
-<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a><span class="do">## 4   New York NY      Austin TX  2802486</span></span>
-<span id="cb8-19"><a href="#cb8-19" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb8-20"><a href="#cb8-20" tabindex="-1"></a><span class="do">## $Time</span></span>
-<span id="cb8-21"><a href="#cb8-21" tabindex="-1"></a><span class="do">##              or             de   Time</span></span>
-<span id="cb8-22"><a href="#cb8-22" tabindex="-1"></a><span class="do">## 1 Washington DC Los Angeles CA 139116</span></span>
-<span id="cb8-23"><a href="#cb8-23" tabindex="-1"></a><span class="do">## 2   New York NY Los Angeles CA 146584</span></span>
-<span id="cb8-24"><a href="#cb8-24" tabindex="-1"></a><span class="do">## 3 Washington DC      Austin TX  80322</span></span>
-<span id="cb8-25"><a href="#cb8-25" tabindex="-1"></a><span class="do">## 4   New York NY      Austin TX  92625</span></span>
-<span id="cb8-26"><a href="#cb8-26" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb8-27"><a href="#cb8-27" tabindex="-1"></a><span class="do">## $Status</span></span>
-<span id="cb8-28"><a href="#cb8-28" tabindex="-1"></a><span class="do">##              or             de status</span></span>
-<span id="cb8-29"><a href="#cb8-29" tabindex="-1"></a><span class="do">## 1 Washington DC Los Angeles CA     OK</span></span>
-<span id="cb8-30"><a href="#cb8-30" tabindex="-1"></a><span class="do">## 2   New York NY Los Angeles CA     OK</span></span>
-<span id="cb8-31"><a href="#cb8-31" tabindex="-1"></a><span class="do">## 3 Washington DC      Austin TX     OK</span></span>
-<span id="cb8-32"><a href="#cb8-32" tabindex="-1"></a><span class="do">## 4   New York NY      Austin TX     OK</span></span>
-<span id="cb8-33"><a href="#cb8-33" tabindex="-1"></a></span>
-<span id="cb8-34"><a href="#cb8-34" tabindex="-1"></a><span class="co"># Time and distance avoiding &#39;tolls&#39;.</span></span>
-<span id="cb8-35"><a href="#cb8-35" tabindex="-1"></a>results <span class="ot">=</span> <span class="fu">gmapsdistance</span>(<span class="at">origin =</span> <span class="fu">c</span>(<span class="st">&quot;Washington DC&quot;</span>, <span class="st">&quot;New York NY&quot;</span>),</span>
-<span id="cb8-36"><a href="#cb8-36" tabindex="-1"></a>                        <span class="at">destination =</span> <span class="fu">c</span>(<span class="st">&quot;Los Angeles CA&quot;</span>, <span class="st">&quot;Austin TX&quot;</span>),</span>
-<span id="cb8-37"><a href="#cb8-37" tabindex="-1"></a>                        <span class="at">mode =</span> <span class="st">&quot;driving&quot;</span>,</span>
-<span id="cb8-38"><a href="#cb8-38" tabindex="-1"></a>                        <span class="at">avoid =</span> <span class="st">&quot;tolls&quot;</span>,</span>
-<span id="cb8-39"><a href="#cb8-39" tabindex="-1"></a>                        <span class="at">key=</span>APIkey)</span>
-<span id="cb8-40"><a href="#cb8-40" tabindex="-1"></a></span>
-<span id="cb8-41"><a href="#cb8-41" tabindex="-1"></a>results</span>
-<span id="cb8-42"><a href="#cb8-42" tabindex="-1"></a><span class="do">## $Distance</span></span>
-<span id="cb8-43"><a href="#cb8-43" tabindex="-1"></a><span class="do">##               Los Angeles CA Austin TX</span></span>
-<span id="cb8-44"><a href="#cb8-44" tabindex="-1"></a><span class="do">## Washington DC        4302413   2458491</span></span>
-<span id="cb8-45"><a href="#cb8-45" tabindex="-1"></a><span class="do">## New York NY          4605786   2799342</span></span>
-<span id="cb8-46"><a href="#cb8-46" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb8-47"><a href="#cb8-47" tabindex="-1"></a><span class="do">## $Time</span></span>
-<span id="cb8-48"><a href="#cb8-48" tabindex="-1"></a><span class="do">##               Los Angeles CA Austin TX</span></span>
-<span id="cb8-49"><a href="#cb8-49" tabindex="-1"></a><span class="do">## Washington DC         139703     80953</span></span>
-<span id="cb8-50"><a href="#cb8-50" tabindex="-1"></a><span class="do">## New York NY           151405     93119</span></span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a><span class="do">## Error in gmapsdistance(origin = c(&quot;Washington DC&quot;, &quot;New York NY&quot;), destination = c(&quot;Los Angeles CA&quot;, : The departure time has to be some time in the future!</span></span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a>results</span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a><span class="do">## $Distance</span></span>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a><span class="do">##               or              de Distance</span></span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a><span class="do">## 1  Washington DC  Los Angeles CA  4986095</span></span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a><span class="do">## 2    New York NY  Los Angeles CA  5196724</span></span>
+<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a><span class="do">## 3     Seattle WA  Los Angeles CA  2169821</span></span>
+<span id="cb8-19"><a href="#cb8-19" tabindex="-1"></a><span class="do">## 4       Miami FL  Los Angeles CA  4817978</span></span>
+<span id="cb8-20"><a href="#cb8-20" tabindex="-1"></a><span class="do">## 5  Washington DC       Austin TX  3125626</span></span>
+<span id="cb8-21"><a href="#cb8-21" tabindex="-1"></a><span class="do">## 6    New York NY       Austin TX  3336255</span></span>
+<span id="cb8-22"><a href="#cb8-22" tabindex="-1"></a><span class="do">## 7     Seattle WA       Austin TX  3841339</span></span>
+<span id="cb8-23"><a href="#cb8-23" tabindex="-1"></a><span class="do">## 8       Miami FL       Austin TX  2453963</span></span>
+<span id="cb8-24"><a href="#cb8-24" tabindex="-1"></a><span class="do">## 9  Washington DC      Chicago IL  1274619</span></span>
+<span id="cb8-25"><a href="#cb8-25" tabindex="-1"></a><span class="do">## 10   New York NY      Chicago IL  1502416</span></span>
+<span id="cb8-26"><a href="#cb8-26" tabindex="-1"></a><span class="do">## 11    Seattle WA      Chicago IL  3665627</span></span>
+<span id="cb8-27"><a href="#cb8-27" tabindex="-1"></a><span class="do">## 12      Miami FL      Chicago IL  2452591</span></span>
+<span id="cb8-28"><a href="#cb8-28" tabindex="-1"></a><span class="do">## 13 Washington DC Philadelphia PA   242658</span></span>
+<span id="cb8-29"><a href="#cb8-29" tabindex="-1"></a><span class="do">## 14   New York NY Philadelphia PA   161314</span></span>
+<span id="cb8-30"><a href="#cb8-30" tabindex="-1"></a><span class="do">## 15    Seattle WA Philadelphia PA  5172587</span></span>
+<span id="cb8-31"><a href="#cb8-31" tabindex="-1"></a><span class="do">## 16      Miami FL Philadelphia PA  2230557</span></span>
+<span id="cb8-32"><a href="#cb8-32" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb8-33"><a href="#cb8-33" tabindex="-1"></a><span class="do">## $Time</span></span>
+<span id="cb8-34"><a href="#cb8-34" tabindex="-1"></a><span class="do">##               or              de   Time</span></span>
+<span id="cb8-35"><a href="#cb8-35" tabindex="-1"></a><span class="do">## 1  Washington DC  Los Angeles CA 923170</span></span>
+<span id="cb8-36"><a href="#cb8-36" tabindex="-1"></a><span class="do">## 2    New York NY  Los Angeles CA 965663</span></span>
+<span id="cb8-37"><a href="#cb8-37" tabindex="-1"></a><span class="do">## 3     Seattle WA  Los Angeles CA 420165</span></span>
+<span id="cb8-38"><a href="#cb8-38" tabindex="-1"></a><span class="do">## 4       Miami FL  Los Angeles CA 885208</span></span>
+<span id="cb8-39"><a href="#cb8-39" tabindex="-1"></a><span class="do">## 5  Washington DC       Austin TX 587645</span></span>
+<span id="cb8-40"><a href="#cb8-40" tabindex="-1"></a><span class="do">## 6    New York NY       Austin TX 630138</span></span>
+<span id="cb8-41"><a href="#cb8-41" tabindex="-1"></a><span class="do">## 7     Seattle WA       Austin TX 718670</span></span>
+<span id="cb8-42"><a href="#cb8-42" tabindex="-1"></a><span class="do">## 8       Miami FL       Austin TX 448328</span></span>
+<span id="cb8-43"><a href="#cb8-43" tabindex="-1"></a><span class="do">## 9  Washington DC      Chicago IL 245772</span></span>
+<span id="cb8-44"><a href="#cb8-44" tabindex="-1"></a><span class="do">## 10   New York NY      Chicago IL 292075</span></span>
+<span id="cb8-45"><a href="#cb8-45" tabindex="-1"></a><span class="do">## 11    Seattle WA      Chicago IL 688892</span></span>
+<span id="cb8-46"><a href="#cb8-46" tabindex="-1"></a><span class="do">## 12      Miami FL      Chicago IL 470617</span></span>
+<span id="cb8-47"><a href="#cb8-47" tabindex="-1"></a><span class="do">## 13 Washington DC Philadelphia PA  48438</span></span>
+<span id="cb8-48"><a href="#cb8-48" tabindex="-1"></a><span class="do">## 14   New York NY Philadelphia PA  32101</span></span>
+<span id="cb8-49"><a href="#cb8-49" tabindex="-1"></a><span class="do">## 15    Seattle WA Philadelphia PA 978307</span></span>
+<span id="cb8-50"><a href="#cb8-50" tabindex="-1"></a><span class="do">## 16      Miami FL Philadelphia PA 420322</span></span>
 <span id="cb8-51"><a href="#cb8-51" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb8-52"><a href="#cb8-52" tabindex="-1"></a><span class="do">## $Status</span></span>
-<span id="cb8-53"><a href="#cb8-53" tabindex="-1"></a><span class="do">##               Los Angeles CA Austin TX</span></span>
-<span id="cb8-54"><a href="#cb8-54" tabindex="-1"></a><span class="do">## Washington DC &quot;OK&quot;           &quot;OK&quot;     </span></span>
-<span id="cb8-55"><a href="#cb8-55" tabindex="-1"></a><span class="do">## New York NY   &quot;OK&quot;           &quot;OK&quot;</span></span></code></pre></div>
+<span id="cb8-53"><a href="#cb8-53" tabindex="-1"></a><span class="do">##               or              de status</span></span>
+<span id="cb8-54"><a href="#cb8-54" tabindex="-1"></a><span class="do">## 1  Washington DC  Los Angeles CA     OK</span></span>
+<span id="cb8-55"><a href="#cb8-55" tabindex="-1"></a><span class="do">## 2    New York NY  Los Angeles CA     OK</span></span>
+<span id="cb8-56"><a href="#cb8-56" tabindex="-1"></a><span class="do">## 3     Seattle WA  Los Angeles CA     OK</span></span>
+<span id="cb8-57"><a href="#cb8-57" tabindex="-1"></a><span class="do">## 4       Miami FL  Los Angeles CA     OK</span></span>
+<span id="cb8-58"><a href="#cb8-58" tabindex="-1"></a><span class="do">## 5  Washington DC       Austin TX     OK</span></span>
+<span id="cb8-59"><a href="#cb8-59" tabindex="-1"></a><span class="do">## 6    New York NY       Austin TX     OK</span></span>
+<span id="cb8-60"><a href="#cb8-60" tabindex="-1"></a><span class="do">## 7     Seattle WA       Austin TX     OK</span></span>
+<span id="cb8-61"><a href="#cb8-61" tabindex="-1"></a><span class="do">## 8       Miami FL       Austin TX     OK</span></span>
+<span id="cb8-62"><a href="#cb8-62" tabindex="-1"></a><span class="do">## 9  Washington DC      Chicago IL     OK</span></span>
+<span id="cb8-63"><a href="#cb8-63" tabindex="-1"></a><span class="do">## 10   New York NY      Chicago IL     OK</span></span>
+<span id="cb8-64"><a href="#cb8-64" tabindex="-1"></a><span class="do">## 11    Seattle WA      Chicago IL     OK</span></span>
+<span id="cb8-65"><a href="#cb8-65" tabindex="-1"></a><span class="do">## 12      Miami FL      Chicago IL     OK</span></span>
+<span id="cb8-66"><a href="#cb8-66" tabindex="-1"></a><span class="do">## 13 Washington DC Philadelphia PA     OK</span></span>
+<span id="cb8-67"><a href="#cb8-67" tabindex="-1"></a><span class="do">## 14   New York NY Philadelphia PA     OK</span></span>
+<span id="cb8-68"><a href="#cb8-68" tabindex="-1"></a><span class="do">## 15    Seattle WA Philadelphia PA     OK</span></span>
+<span id="cb8-69"><a href="#cb8-69" tabindex="-1"></a><span class="do">## 16      Miami FL Philadelphia PA     OK</span></span>
+<span id="cb8-70"><a href="#cb8-70" tabindex="-1"></a></span>
+<span id="cb8-71"><a href="#cb8-71" tabindex="-1"></a><span class="co"># Time and distance avoiding &#39;tolls&#39;.</span></span>
+<span id="cb8-72"><a href="#cb8-72" tabindex="-1"></a>results <span class="ot">=</span> <span class="fu">gmapsdistance</span>(<span class="at">origin =</span> <span class="fu">c</span>(<span class="st">&quot;Washington DC&quot;</span>, <span class="st">&quot;New York NY&quot;</span>),</span>
+<span id="cb8-73"><a href="#cb8-73" tabindex="-1"></a>                        <span class="at">destination =</span> <span class="fu">c</span>(<span class="st">&quot;Los Angeles CA&quot;</span>, <span class="st">&quot;Austin TX&quot;</span>),</span>
+<span id="cb8-74"><a href="#cb8-74" tabindex="-1"></a>                        <span class="at">mode =</span> <span class="st">&quot;driving&quot;</span>,</span>
+<span id="cb8-75"><a href="#cb8-75" tabindex="-1"></a>                        <span class="at">avoid =</span> <span class="st">&quot;tolls&quot;</span>,</span>
+<span id="cb8-76"><a href="#cb8-76" tabindex="-1"></a>                        <span class="at">key=</span>APIkey)</span>
+<span id="cb8-77"><a href="#cb8-77" tabindex="-1"></a></span>
+<span id="cb8-78"><a href="#cb8-78" tabindex="-1"></a>results</span>
+<span id="cb8-79"><a href="#cb8-79" tabindex="-1"></a><span class="do">## $Distance</span></span>
+<span id="cb8-80"><a href="#cb8-80" tabindex="-1"></a><span class="do">##               Los Angeles CA Austin TX</span></span>
+<span id="cb8-81"><a href="#cb8-81" tabindex="-1"></a><span class="do">## Washington DC        4307590   2464936</span></span>
+<span id="cb8-82"><a href="#cb8-82" tabindex="-1"></a><span class="do">## New York NY          4605591   2800410</span></span>
+<span id="cb8-83"><a href="#cb8-83" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb8-84"><a href="#cb8-84" tabindex="-1"></a><span class="do">## $Time</span></span>
+<span id="cb8-85"><a href="#cb8-85" tabindex="-1"></a><span class="do">##               Los Angeles CA Austin TX</span></span>
+<span id="cb8-86"><a href="#cb8-86" tabindex="-1"></a><span class="do">## Washington DC         139720     80978</span></span>
+<span id="cb8-87"><a href="#cb8-87" tabindex="-1"></a><span class="do">## New York NY           150909     93056</span></span>
+<span id="cb8-88"><a href="#cb8-88" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb8-89"><a href="#cb8-89" tabindex="-1"></a><span class="do">## $Status</span></span>
+<span id="cb8-90"><a href="#cb8-90" tabindex="-1"></a><span class="do">##               Los Angeles CA Austin TX</span></span>
+<span id="cb8-91"><a href="#cb8-91" tabindex="-1"></a><span class="do">## Washington DC &quot;OK&quot;           &quot;OK&quot;     </span></span>
+<span id="cb8-92"><a href="#cb8-92" tabindex="-1"></a><span class="do">## New York NY   &quot;OK&quot;           &quot;OK&quot;</span></span></code></pre></div>
 </div>
 <div id="using-foreign-place-names" class="section level2">
 <h2>Using “foreign” place names</h2>
@@ -767,10 +803,10 @@ Windows environments.</p>
 <span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>                        <span class="at">mode =</span> <span class="st">&quot;walking&quot;</span>)</span>
 <span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>results</span>
 <span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="do">## $Distance</span></span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="do">## [1] 488</span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="do">## [1] 447</span></span>
 <span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a><span class="do">## $Time</span></span>
-<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a><span class="do">## [1] 390</span></span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a><span class="do">## [1] 384</span></span>
 <span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a><span class="do">## $Status</span></span>
 <span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a><span class="do">## [1] &quot;OK&quot;</span></span></code></pre></div>

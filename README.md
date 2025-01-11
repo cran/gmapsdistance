@@ -1,10 +1,10 @@
 gmapsdistance
 =======
 [![R-CMD-check](https://github.com/jlacko/gmapsdistance/workflows/R-CMD-check/badge.svg)](https://github.com/jlacko/gmapsdistance/actions)
-![Downloads-monthly](http://cranlogs.r-pkg.org/badges/gmapsdistance?color=brightgreen)
+![Downloads-monthly](https://cranlogs.r-pkg.org/badges/gmapsdistance?color=brightgreen)
 ![Downloads-total](https://cranlogs.r-pkg.org/badges/grand-total/gmapsdistance?color=brightgreen)
 ![License](https://img.shields.io/badge/license-GPL--3-brightgreen.svg?style=flat)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/gmapsdistance)](https://cran.r-project.org/package=gmapsdistance)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/gmapsdistance)](https://cran.r-project.org/package=gmapsdistance)
 [![CRAN-checks](https://badges.cranchecks.info/summary/gmapsdistance.svg)](https://cran.r-project.org/web/checks/check_results_gmapsdistance.html)
 [![Codecov test coverage](https://codecov.io/gh/jlacko/gmapsdistance/branch/master/graph/badge.svg)](https://app.codecov.io/gh/jlacko/gmapsdistance?branch=master)
 
@@ -18,7 +18,7 @@ While the R package is open source the Distance Matrix API itself is a commercia
 
 A free tier is provided - $200 monthly credit. This is enough for 40,000 [Distance Matrix](https://developers.google.com/maps/documentation/distance-matrix/usage-and-billing?w#distance-matrix) calls or 20,000 [Distance Matrix Advanced](https://developers.google.com/maps/documentation/distance-matrix/usage-and-billing?w#distance-matrix-advanced) calls – more than sufficient for most R package users.
 
-Also note that using the API is subject to [Google Maps Platform Terms of Service](https://cloud.google.com/maps-platform/terms/).
+Also note that using the API is subject to [Google Maps Platform Terms of Service](https://cloud.google.com/maps-platform/terms).
 
 
 ## Installation
@@ -105,8 +105,14 @@ We like to keep track of the projects where gmapsdistance has been used. This wi
 
 4. R-bloggers. The collaborative innovation landscape in data science. [Link](https://www.r-bloggers.com/2016/07/the-collaborative-innovation-landscape-in-data-science/)
 
-5. RPubs.  [Link](https://rpubs.com/mattdray/gmapsdistance-test) 
+5. RPubs. [Link](https://rpubs.com/mattdray/gmapsdistance-test) 
 
-6. Identifying Partnership Opportunities at Air Force Installations: A Geographic Information Systems Approach [Link](https://scholar.afit.edu/cgi/viewcontent.cgi?article=1809&context=etd) 
+6. Identifying Partnership Opportunities at Air Force Installations: A Geographic Information Systems Approach [Link](https://scholar.afit.edu/etd/810/) 
 
 7. DataWookie. Review of gmapsdistance. [Link](https://datawookie.dev/blog/2017/08/route-asymmetry-in-google-maps/)
+
+8. The Role of Telehealth in Promoting Equitable Abortion Access in the United States: Spatial Analysis [Link to article](https://publichealth.jmir.org/2023/1/e45671)
+
+9. The relationship between living in urban and rural areas of Scotland and children’s physical activity and sedentary levels: a country-wide cross-sectional analysis [Link to article](https://doi.org/10.1186/s12889-020-8311-y)
+
+10. E-trikes for urban delivery: An empirical mixed-fleet simulation approach to assess city logistics sustainability [Link to article](https://doi.org/10.1016/j.scs.2023.104641)
